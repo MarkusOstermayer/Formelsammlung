@@ -1,0 +1,326 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{physics}
+\usepackage[left=1cm,right=1cm,top=2cm,bottom=1.5cm]{geometry}
+\usepackage{siunitx}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{mhchem}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{csquotes}
+\usepackage{trfsigns}
+\usepackage{capt-of}
+\usepackage{comment}
+
+\sisetup{locale=DE}
+\sisetup{per-mode = symbol-or-fraction}
+\sisetup{separate-uncertainty=true}
+\DeclareSIUnit\year{a}
+\DeclareSIUnit\clight{c}
+\mdfdefinestyle{exercise}{
+	backgroundcolor=black!10,roundcorner=8pt,hidealllines=true,nobreak
+}
+
+\begin{document}
+\twocolumn
+\pagestyle{fancy}
+\lhead{Physik für Elektrotechniker \\ Formelsammlung}
+
+	\section{Einführung}
+	\subsection{Fehlerfortpflanzung}
+		\begin{mdframed}[style=exercise]
+			\begin{math}
+				\Delta f = \abs{\frac{\partial f(x,y,z)}{\partial x}} * \abs{\Delta x} + \abs{\frac{\partial f(x,y,z)}{\partial y}} * \abs{\Delta y} + \abs{\frac{\partial f(x,y,z)}{\partial z}} * \abs{\Delta z}
+			\end{math}
+		\end{mdframed}
+
+	\section{Mechanik}
+
+	\subsection{Kinematik}
+	\begin{mdframed}[style=exercise]
+		\begin{math}
+			a_{1D} = \frac{\partial v}{\partial t} = \dot v; a = \frac{\partial}{\partial t}(\frac{\partial s}{\partial t}) = \ddot s
+			\newline
+			v_{1D} = \frac{\partial s}{\partial t} = \dot s
+			\newline
+			\vec v_{3D} = \frac{\partial\vec r}{\partial t} = \vec\dot r = \begin{pmatrix} \dot x \\ \dot y \\ \dot z \end{pmatrix}
+			\newline
+			\vec a_{3D} = \vec\dot v = \ddot\vec r = \begin{pmatrix} \ddot x \\ \ddot y \\ \ddot z \end{pmatrix}
+			\newline
+			\abs{\vec a_{zp}} = \frac{v^2}{r} = \omega^2 * r
+			\newline
+			\omega = \frac{2*\pi}{f}
+		\end{math}
+	\end{mdframed}
+
+	\subsection{Energie}
+	\begin{mdframed}[style=exercise]
+		\begin{math}
+			\text{Energieunterschied:} \Delta E = E_{nachher} - E_{vorher}
+			\newline
+			\text{potentielle Energie:} E_{pot} = m*g*h
+			\newline
+			\text{kinetische Energie:} E_{kin} = \frac{m*v^2}{2}
+			\newline
+			\text{Elektrische Energie:} E_{el} = \frac{1}{2} * k * s^2
+			\newline
+			\text{Rotationsenergie:} E_{rot} = \frac{1}{2} * J * \omega^2
+			\newline
+			\text{Energie des Kondesators:} E_{Kondensator} = \frac{Q}{2*C} = \frac{C*U^2}{2}
+			\newline
+			E_{Spule} = \frac{L*I^2}{2}
+			\newline
+			\text{Protonenenergie:} E_{Photon} = h * f
+		\end{math}
+	\end{mdframed}
+
+	\subsection{Kräfte, Impulse und Arbeit}
+	\begin{mdframed}[style=exercise]
+		\begin{math}
+			\text{zweites newton'sches Axiom:} F = m * a
+			\newline
+			\text{drittes newton'sches Axiom:} F_{12} = - F_{21}
+			\newline
+			\text{Superposition von Kräften:} \sum_{i} F_{i}
+			\newline
+			\text{Gewichtskraft:} \vec F_{G} = m * \vec g
+			\newline
+			\text{Federkraft:} F = -k * s
+			\newline
+			\text{Zentripedalkraft:} F_{zp} = -m * \omega^2 * r
+			\newline
+			\text{Haftreibung:} F_{R} = \mu * F_{N}
+			\newline
+			\text{Flüssigkeitsreibung:} F_{R} = \chi * \vec v
+			\newline
+			\text{Impuls:} \vec p = m * \vec v
+			\newline
+			\text{Kraftstoß:} \int\limits_{t_{1}}^{t_{2}} F_{t} \mathrm{d}t = \int\limits_{p_{1}}^{p_{2}} \mathrm{d}t = \vec p_{2} - \vec p_{1} = \vec\Delta p
+			\newline
+			\text{Beschleunigungsarbeit:} W_{12} = \frac{m * (v_{2}^2 - v_{1}^2)}{2}
+			\newline
+			\text{Hubarbeit gegen die Gravitation:} F = -G * \frac{m*M}{r^2}\vec e_{r}
+			\newline
+			\Rightarrow W_{12} = G*m*M*(\frac{1}{r_{1}} - \frac{1}{r_{2}})
+		\end{math}
+	\end{mdframed}
+
+	\subsection{Leistung}
+	\begin{mdframed}[style=exercise]
+		\begin{math}
+			\text{Leistung:} P = \frac{\Delta W}{\Delta t} bzw. P = \frac{\partial W}{\partial t} = \vec F * \vec v
+		\end{math}
+	\end{mdframed}
+
+	\subsection{Stöße}
+	\begin{mdframed}[style=exercise]
+		\begin{math}
+			\text{Impuls}: m_{1}*v_{1} + m_{2}*v_{2} = m_{1}*v_{1}\prime + m_{2}*v_{2}\prime
+			\newline
+			Energie: \frac{m_{1} * v_{1}^2}{2} + \frac{m_{2} * v_{2}^2}{2} = \frac{m_{1} * v_{1}^2\prime}{2} + \frac{m_{2} * v_{2}^2\prime}{2} + \Delta W
+			\newline
+			\text{Bei elastischen Stössen gilt:} \Delta W = 0
+		\end{math}
+	\end{mdframed}
+
+	\subsection{Impulserhaltungssatz}
+	\subsection{Arbeit für konstante Kraft}
+	\subsection{Beschleunigungsarbeit}
+	\subsection{Hubarbeit}
+	\subsection{Leistung}
+	\subsection{Energie}
+	\subsection{kinetische Energie}
+	\subsection{potentielle Energie}
+	\subsection{Gerader Stoß}
+	\subsubsection{elastisch}
+	\subsubsection{unelastisch}
+	\subsection{Drehmoment}
+	\subsection{Drehimpulss}
+
+
+
+
+
+	\section{Thermodynamik}
+
+	\section{Elektrizität & Magnetismus}
+
+	\section{Schwingungen & Wellen}
+
+	\section{Optik}
+
+	\section{Atomphysik}
+
+	\section{Festkörperphysik}
+
+	\begin{comment}
+
+\section{Lineare zeitinvariante Systeme}
+  \subsection{Eigenschaften}
+  Eigenschaften LTI-Systeme
+  \begin{mdframed}[style=exercise]
+    \begin{enumerate}
+      \item Stabilität\\
+      $\abs{x(t)} < M < \infty \Rightarrow \abs{y(t)} < N < \infty$
+      \item Linearität\\
+      $W\qty{\sum_{k=1}^{N}a_n x_n(t)}=\sum_{n=1}^{N}W\qty{a_n x_n(t)}$
+      \item Zeitinvarianz\\
+      $W\qty{x(t-t_0)} =y(t-t_0)$
+      \item Kausalität\\
+      $t < 0 \Rightarrow x(t)=0 \land y(t)=0$
+    \end{enumerate}
+  \end{mdframed}
+
+  \subsection{Systemantwort}
+  Die Sprung-/Impulsantwort beschreibt Systemantwort vollständig
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      y(t) &= \int^{\infty}_{-\infty} a(t-\tau) x'(\tau) \dd{\tau}\\
+      a(t-\tau) &= W\qty{s(t-\tau)}\nonumber
+    \end{align}
+  \end{mdframed}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      y(t) &= \int_{-\infty}^{\infty} h(t-\tau) x(\tau) \dd{\tau}\\
+      h(t-\tau) &= W\qty{\delta(t-\tau)}\nonumber
+    \end{align}
+  \end{mdframed}
+  \subsection{Abtasttheorem}
+  Durch die Abtastung wird das Spektrum von $f(t)$ unendlich oft um die Frequenzen $n\cdot \omega_a$ reproduziert.
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      F_A(\omega) &= \frac{1}{T_A} \sum_{n=-\infty}^{\infty} F(\omega-n\omega_A)\\
+      2\omega_g &\leq \omega_A\nonumber
+    \end{align}
+  \end{mdframed}
+  \section{Transformationen}
+  \subsection{Fourierreihe}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      f(t) &= \sum_{n=0}^{\infty} \qty[a_n \cos(n \omega_0 t) + b_n \sin(n \omega_0 t)]\\
+      a_n &= \frac{2}{T}\int_{-T/2}^{T/2}f(t)\cos(n\omega_0 t)\dd{t}\nonumber\\
+      b_n &= \frac{2}{T}\int_{-T/2}^{T/2}f(t)\sin(n\omega_0 t)\dd{t}\nonumber
+    \end{align}
+  \end{mdframed}
+  \pagebreak
+  \subsection{Fourierreihe, komplex}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      f(t) &= \sum_{n=-\infty}^{\infty} c_n e^{jn\omega_0 t}\\
+      c_n &= \frac{1}{T} \int_{-T/2}^{T/2} f(t) e^{-jn\omega_0 t}\dd{t}\nonumber
+    \end{align}
+  \end{mdframed}
+  \subsection{Fourierintegral}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      f(t) &= \frac{1}{2\pi} \int_{-\infty}^{\infty} F(\omega) e^{j\omega t} \dd{\omega}\\
+      F(\omega) &= \int_{-\infty}^{\infty} f(t) e^{-j\omega t} \dd{t}
+    \end{align}
+  \end{mdframed}
+  \subsubsection{Eigenschaften}
+  \begin{mdframed}[style=exercise]
+    \begin{enumerate}
+      \item Linearität\\
+      $a f_1(t) + b f_2(t) \laplace a F_1(\omega) + b F_2(\omega)$
+      \item Zeitverschiebung\\
+      $f(t-t_0) \laplace F(\omega)e^{-j\omega t_0}$
+      \item Frequenzverschiebung\\
+      $f(t) e^{\pm j\omega_0 t}\laplace F(\omega\mp \omega_0)$
+      \item Faltung\\
+      $f_1(t)*f_2(t)\laplace F_1(\omega)\cdot F_2(\omega)$\\
+      $f_1(\omega)\cdot f_2(\omega)\laplace \frac{1}{2\pi}F_1(t)*F_2(t)$
+    \end{enumerate}
+  \end{mdframed}
+  \subsection{DFT}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      x_n &= \frac{1}{N} \sum_{k=0}^{N-1} X_k\cdot e^{i 2 \pi k n / N}\\
+      X_k &= \sum_{n=0}^{N-1} x_n\cdot e^{-i 2 \pi k n / N}
+    \end{align}
+  \end{mdframed}
+  \subsubsection{FFT}
+  \begin{center}
+    \includegraphics[width=.35\textwidth]{butterfly}
+    \captionof{figure}{FFT}
+  \end{center}
+  \pagebreak
+  \subsection{Hilbert Transformation}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      x_{\mathrm{ht}}(t) &= x_{\mathrm{r}}(t) * h(t)\\
+      H(\omega) &= -j \, \text{sgn}(\omega)
+    \end{align}
+  \end{mdframed}
+  \subsection{z Transformation}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      X(z) &= \sum_{n=-\infty}^{\infty} x(n) z^{-n}\\
+      x(n) &= \frac{1}{2\pi j} \oint_c X(Z) z^{n-1}\dd{z}
+    \end{align}
+  \end{mdframed}
+  \subsubsection{Übertragungsfunktion}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      H(Z) &=\frac{Y(Z)}{X(z)}=\frac{\sum_{k=0}^q b_k z^{-k}}{\sum_{k=0}^p a_k z^{-k}}=k\frac{\prod_{k=1}^q (1-z_k z^{-1})}{\prod_{k=1}^p (1-p_k z^{-1})}
+    \end{align}
+  \end{mdframed}
+  \subsubsection{Verschiebung im Zeitbereich}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      Y(z) &= \sum_{n=0}^{\infty} \qty[x(n-m)] z^{-n} =  z^{-m} X(z)\\
+      Y(z) &= \sum_{n=0}^{\infty}\qty[x(n+m)]z^{-n} = z^{m}\qty[x(t)-\sum_{n=0}^{m-1} x(n) z^{-n}]
+    \end{align}
+  \end{mdframed}
+  \section{Filter}
+  \subsection{FIR}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      y[n] &= \sum_{k=0}^{q} b_k x(n-k)
+    \end{align}
+  \end{mdframed}
+  \begin{center}
+    \includegraphics[width=.4\textwidth]{fir}
+  \end{center}
+  \subsection{IIR}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      y[n] &= \sum_{k=0}^{q} b_k x(n-k) - \sum_{k=1}^{p} a_k y(n-k)
+    \end{align}
+  \end{mdframed}
+  \begin{center}
+    \includegraphics[width=.35\textwidth]{df1}
+    \captionof{figure}{Direkt Form 1}
+  \end{center}
+  \begin{center}
+    \includegraphics[width=.35\textwidth]{df2}
+    \captionof{figure}{Direkt Form 2}
+  \end{center}
+  \section{Entropie}
+  \subsection{Informationsgehalt}
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      I_i &= \log_2 \frac{1}{p_i}
+    \end{align}
+  \end{mdframed}
+  \subsection{Entropie}
+  Mittlerer Informaionsgehalt
+  \begin{mdframed}[style=exercise]
+    \begin{align}
+      H(s) &= E\qty{I} = -\sum_{i=0}^{n-1} p_i \log_2 p_i\\
+      0 &\leq H(s) \leq \log_2 n
+    \end{align}
+  \end{mdframed}
+  Für $H(s)=\log_2 n$ Gleichverteilung und völlige Ungewissheit.
+\end{comment}
+\end{document}
